@@ -1,0 +1,111 @@
+@import './normalize.scss';
+
+*{
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+$main-color: rgb(101, 101, 226);
+$sub-color: rgb(231, 96, 96);
+
+.wrapper{
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.calculater{
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(#000,0.2);
+  width: 240px;
+}
+.calculater-header{
+  position: relative;
+}
+.calculater-input{
+  width: 100%;
+  background-color: $main-color;
+  border: none;
+  padding: 15px 10px; 
+  font-size: 19px;
+  border-radius: 4px 4px 0 0;
+  outline:none;
+  color: #fff;
+}
+.clear-input{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 3px 6px;
+  z-index: 1;
+  color: #000;
+  border-radius: 0 4px 4px 0;
+  background-color: #fff;
+  font-size: 10px;
+  transition: all 0.1s linear;
+  opacity: 0;
+  right: -10px;
+  visibility: hidden;
+  &.active{
+    opacity: 1;
+    right: 10px;
+    visibility: visible;
+
+  }
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0;
+    transform: translateX(-100%);
+    border-top: 9px solid transparent;
+    border-right: 12px solid #fff;
+    border-bottom: 8px solid transparent;
+    transition: all 0.1s linear;
+
+  }
+  &:hover{
+    background: $sub-color;
+    &::before{
+      border-right-color: $sub-color;
+    }
+  }
+}
+.calculater-buttons{
+  padding-top: 20px;
+  padding: 10px;
+
+}
+.calculater__row{
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.calculater-buttons__button{
+  display: inline-block;
+  flex: 0 0 23%;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;;
+  background-color: $main-color;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  color: #fff;
+  transition: 0.2s;
+  &[data-purposes='equally']{
+    flex: 0 1 73%;
+  }
+  &[data-purposes='clear']{
+    background: $sub-color;
+     
+  }
+  &:hover{
+    box-shadow: 0 0 10px rgba($main-color,0.2);
+    transform: scale(0.9);
+  }
+  &:active{
+    background: $sub-color;
+  }
+}
