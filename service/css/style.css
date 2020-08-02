@@ -394,7 +394,8 @@ body {
   justify-content: center;
   min-height: 100px;
   overflow: auto;
-  padding: 0 10px; }
+  padding: 0 10px;
+  margin-bottom: 30px; }
   .service-cost__wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -413,6 +414,18 @@ body {
 .service-cost-item {
   padding: 0 20px;
   position: relative; }
+  .service-cost-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    right: -10px;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    -webkit-transform: translateY(670%);
+    -ms-transform: translateY(670%);
+    transform: translateY(670%); }
   .service-cost-item:first-child {
     padding-left: 0; }
   .service-cost-item:last-child {
@@ -434,6 +447,7 @@ body {
     cursor: pointer;
     text-align: center; }
   .service-cost-item__title {
+    display: inline-block;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 300;
     text-transform: uppercase;
@@ -459,18 +473,6 @@ body {
       -o-transition: 0.2s;
       transition: 0.2s;
       z-index: 2; }
-    .service-cost-item__dot::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 10px;
-      right: -10px;
-      width: 155%;
-      height: 2px;
-      background-color: #fff;
-      -webkit-transform: translateY(580%);
-      -ms-transform: translateY(580%);
-      transform: translateY(580%); }
 
 @media (max-width: 960px) {
   .service-title {
@@ -491,3 +493,46 @@ body {
     padding: 9px; }
   .service-type__text {
     font-size: 14px; } }
+
+.services-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+
+.service-button {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  min-width: 200px;
+  background-color: #fff;
+  padding: 10px 10px;
+  border-radius: 30px;
+  font-family: 'Times New Roman', Times, serif;
+  color: #000;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: 0.2s;
+  -o-transition: 0.2s;
+  transition: 0.2s; }
+  .service-button:hover {
+    -webkit-box-shadow: 0 0 5px #fff;
+    box-shadow: 0 0 5px #fff; }
+  .service-button__text {
+    margin-right: 20px; }
+  .service-button__title {
+    display: block;
+    font-size: 20px; }
+
+.service-button__icon {
+  max-width: 40px; }
